@@ -4,8 +4,8 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         Operaciones op = new Operaciones();
-        op.leerArchivo("/home/dam/Work/Clase/AccesoDatos/foto.jpeg");
-        op.escribirArchivo("/home/dam/Work/Clase/AccesoDatos/foto2.jpeg");
+        op.leerArchivo("/home/dam/Work/Clase/AccesoDatos/ExercicioCopiaImaxe2/foto.jpeg");
+        op.escribirArchivo("/home/dam/Work/Clase/AccesoDatos/ExercicioCopiaImaxe2/foto2.jpeg");
     }
 }
 
@@ -23,9 +23,9 @@ class Operaciones {
                     if (lbyte != -1) {
                         listaBytes.add(lbyte);
                     }
-                    //bis.close();
-                } while (lbyte != -1);
 
+                } while (lbyte != -1);
+            bis.close();
         } catch (IOException e) {
             System.out.println("No se encontró el archivo");
         }
@@ -38,7 +38,7 @@ class Operaciones {
             for (Integer listaByte : listaBytes) {
                 bos.write(listaByte);
             }
-            //bos.close();
+            bos.close();
         } catch (IOException e) {
             System.out.println("No se encontró el archivo");
         }
